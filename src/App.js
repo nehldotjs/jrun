@@ -37,8 +37,8 @@ function App() {
                   exact
                   element={<Components loading={loading} />}
                 />
-                <Route path="/jrun/booknow" element={<ServiceBooking />} />
-                <Route path="/jrun/subscription" element={<Subscription />} />
+                <Route path="/booknow" element={<ServiceBooking />} />
+                <Route path="/subscription" element={<Subscription />} />
               </Routes>
             </Router>
           </CompanyData>
