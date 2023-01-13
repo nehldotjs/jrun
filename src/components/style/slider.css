@@ -1,0 +1,163 @@
+.sliderContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    transition: 750ms all ease;
+    padding: 0px 120px;
+}
+
+.sliderContainer .reviewText {
+    margin: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.reviewShadowBox {
+    padding: 20px;
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+    border-radius: 10px;
+    display: flex;
+    margin: auto;
+    position: absolute;
+    z-index: -2;
+    background-color: #a0ca7c;
+}
+
+.textContainer {
+    width: auto;
+    height: auto;
+    margin: auto;
+    display: flex;
+    margin: 10px;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+}
+
+.cardContentWrapper {
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: aliceblue;
+    padding: 15px 20px;
+}
+
+.nameAndRatingContainer {
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin: 10px 0px;
+    justify-content: space-between;
+}
+
+.nameAndRatingContainer .nameContainer {
+    color: #89a471;
+    font-weight: bold;
+
+}
+
+.avatarWrapper {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.avatar {
+    overflow: hidden;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0px;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin: auto;
+    display: flex;
+}
+
+.customerReviewContext {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.texts {
+    margin: auto;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    position: relative;
+    font-weight: normal;
+    text-align: left;
+}
+
+.rec .rec-arrow {
+    border: none;
+    outline: 0px;
+    margin: 0px 20px;
+    position: absolute;
+    z-index: 5;
+    background-color: transparent;
+}
+
+.rec-arrow-right {
+    background-color: transparent;
+    border: none;
+    right: 0px;
+}
+
+.rec-arrow-left {
+    background-color: transparent;
+    border: none;
+    left: 0px;
+}
+
+@media screen and (max-width:900px) {
+    .sliderContainer {
+        display: flex;
+        padding: 0px 10px;
+    }
+
+    .sliderContainer .reviewText {
+        margin: 15px;
+        width: 70%;
+    }
+
+    .reviewShadowBox {
+        padding: 20px;
+        height: 100%;
+        width: 90%;
+        justify-content: center;
+        border-radius: 10px;
+        display: flex;
+        margin: auto;
+        position: absolute;
+        z-index: -2;
+        background-color: #a0ca7c;
+    }
+}
