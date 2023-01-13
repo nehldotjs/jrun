@@ -49,7 +49,7 @@ function ServiceBooking(props) {
       <div className="serviceLink">
         <div className="serviceLinkwrapper">
           <p>
-            <Link to="/" className="popupLink linkText">
+            <Link to="/jrun" className="popupLink linkText">
               Home
             </Link>
           </p>
@@ -59,7 +59,7 @@ function ServiceBooking(props) {
           </button>
         </div>
         <div className="serviceLinkwrapper">
-          <Link to="/" className="sc-cancelBtn">
+          <Link to="/jrun" className="sc-cancelBtn">
             Cancel
           </Link>
         </div>
