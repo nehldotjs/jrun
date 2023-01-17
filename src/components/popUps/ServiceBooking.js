@@ -10,6 +10,7 @@ import PaymentComponent from "./PaymentComponent";
 function ServiceBooking(props) {
   const [viewService, setViewService] = useState(false);
   const [payment, setPayment] = useState(false);
+  console.log(payment)
   const { CompanyListDataArray, singleBooking, setSingleBooking } =
     useContext(CompanyServiceList);
   function paymentMethod() {

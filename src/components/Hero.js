@@ -13,7 +13,7 @@ function Hero(props) {
   return (
     <div className="hero" id="home">
       <div className={!loading ? "heroContext slideRight" : "heroContext"}>
-        <h3 className="header">JRUN Cleaning Service</h3>
+        <h3 className="header">JRUN <br /> Cleaning Service</h3>
         <p className="heroTag">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magnam
           et asperiores, voluptas, obcaecati excepturi facilis quisquam iure

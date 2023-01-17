@@ -1,4 +1,4 @@
-.paymentScreenWrapper{
+.paymentScreenWrapper {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -7,12 +7,11 @@
     margin: auto;
     top: 0px;
     left: 0px;
-    /* background-color: blue; */
 }
 
 
 .bookingPaymentPopUpWrapper {
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +19,7 @@
     width: 100%;
     flex: 1;
     padding: 5px;
+    top: 0px;
     background-color: rgb(147, 192, 147);
 }
 
@@ -513,4 +513,86 @@ fieldset {
 
 .inputAvailable {
     border: 1.5px solid green;
+}
+
+@media screen and (max-width:900px) {
+    .paymentScreenWrapper {
+        flex-direction: column;
+        position: inherit;
+        overflow: scroll;
+        height: 700PX;
+        width: 400px;
+        overflow: hidden;
+        padding: unset;
+        gap: 5px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .bookingPaymentPopUpWrapper {
+        flex: 1;
+        align-items: flex-start;
+        justify-content: center;
+        height: auto;
+        width: 100%;
+    }
+
+
+    .bookingPaymentWrapper {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+    }
+
+    .bookingPaymentProgressBar {
+        display: flex;
+        height: 100%;
+        display: flex;
+    }
+
+    .inputWrapper form {
+        width: inherit;
+        height: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .formDataHandler {
+        display: flex;
+        width: inherit;
+    }
+
+
+    .dateAndTimeHandler {
+        width: 90%;
+
+    }
+
+    .inputWrapper fieldset {
+        width: 100%;
+    }
+
+    /* .inputWrapper fieldset input {} */
+
+    .activeCustomerInfo {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .activeCustomerInfo fieldset {
+        width: 100%;
+    }
+
+    .paymentUpload{
+        padding: 20px 0px;
+    }
+    .paymentHeader{
+        font-weight: bold;
+        width: inherit;
+    }
+    .bankTransferDetails{
+        margin: auto;
+     }
 }

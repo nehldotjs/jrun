@@ -29,7 +29,7 @@ function PaymentComponent() {
 
   function inputChecking() {
     if (inputChecker) {
-      console.log(inputChecker); 
+      console.log(inputChecker);
     }
   }
 
@@ -126,18 +126,20 @@ function PaymentComponent() {
               <h4>Payment</h4>
             </div>
           </div>
+
           {/* ---------------------------------------------------------------------- */}
+
           <div className="bookingPaymentFormContainer">
             <div className="inputWrapper">
-              <form method="get">
+              <form method="post">
                 <div className="formDataHandler">
-                  {/* ---------------------------------------------------------------*/}
+                  {/* ----------------------------- ----------------------------------*/}
                   <div
                     className={
                       page === 1
                         ? "detailsContainer absolute"
                         : "detailsContainer"
-                    }> 
+                    }>
                     <fieldset className="fieldset">
                       <legend>Name</legend>
                       <input

@@ -762,9 +762,10 @@ form .search {
     .sc-serviceRendered p {
         margin-bottom: 5px;
     }
-.companyStaffDetails{
-    width: 100%;
-}
+
+    .companyStaffDetails {
+        width: 100%;
+    }
 
 
 
