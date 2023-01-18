@@ -1,0 +1,191 @@
+.about {
+
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px 126px;
+}
+
+.about h3 {
+    height: auto;
+    font-size: 30px;
+    padding-top: 10%;
+
+}
+
+.aboutWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.aboutContext {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+
+    flex-direction: column;
+}
+
+
+.about-service {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.about-service h4 {
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-family: monospace;
+    font-weight: normal;
+
+}
+
+.about-service .servicesType {
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: blue */
+}
+
+.about-service .servicesType p {
+    display: flex;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
+    height: 64px;
+    width: 156px;
+}
+
+.about .aboutImage {
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.about .aboutImage .aboutImageWrapper {
+    height: auto;
+    width: auto;
+    border-radius: 20px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.about .aboutImage img {
+    height: 450px;
+    width: 100%;
+    display: flex;
+    margin: auto;
+    object-fit: cover;
+}
+
+@media screen and (max-width:900px) {
+    .about {
+        height: auto;
+        width: 100%;
+        padding: unset;padding-top: 50px;
+        justify-content: space-evenly;
+    }
+
+    .about h3 {
+        height: auto;
+        width: auto;
+        display: flex;
+        padding: unset;
+        margin: auto;
+        text-align: center;
+    }
+
+    .aboutWrapper {
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+
+    .aboutContext {
+        width: 100%;
+        height: auto;
+        display: flex;
+        padding: 20px 0px;
+        padding-top: unset;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .aboutContextWrapper {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin: auto;
+    }
+
+    .about-service {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-service .servicesType {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .aboutContextWrapper p {
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+
+    .about-service h4 {
+        padding: 10px;
+        font-size: 20px;
+        font-weight: bold;
+
+    }
+
+    .about .aboutImage {
+
+        display: flex;
+        height: auto;
+        width: 80%;
+    }
+
+    .about .aboutImage .aboutImageWrapper {
+        height: 100%;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: center;
+        display: flex;
+    }
+
+    .about .aboutImage img {
+        top: 0px;
+        height: 300px;
+        width: 100%;
+        display: flex;
+        margin: auto;
+        object-fit: cover;
+    }
+
+}
