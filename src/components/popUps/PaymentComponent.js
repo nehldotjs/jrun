@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import importIcon from "../../assest/import.png";
+
 // Styles
 import "./popUpStyles/payment.css";
-
 function PaymentComponent() {
+  // const [inputChecker, setInputChecker] = useState({});
   const [page, setPage] = useState(1);
-  const [inputChecker, setInputChecker] = useState({});
   const [formValues, setFormValues] = useState({
     address: "",
     phone: "",
@@ -16,7 +16,7 @@ function PaymentComponent() {
     date: "",
     time: "",
   });
-
+  const [paymentReceipt, setPaymentReceipt] = useState(null);
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormValues({
@@ -24,16 +24,9 @@ function PaymentComponent() {
       [name]: value,
     });
     let textProperty = { [name]: value };
-    setInputChecker(textProperty);
+    console.log(textProperty);
+    // setInputChecker(textProperty);
   };
-
-  function inputChecking() {
-    if (inputChecker) {
-      console.log(inputChecker);
-    }
-  }
-
-  inputChecking();
   // function confirmBtn() {}
   function backBtn() {
     setPage(() => {
@@ -103,6 +96,15 @@ function PaymentComponent() {
       </>
     );
   }
+
+  const imageUpload = (e) => {
+    let file = e.target.files[0];
+    let reader = new FileReader();
+    reader.onloadend = (e) => {
+      setPaymentReceipt(reader.result);
+    };
+    reader.readAsDataURL(file);
+  };
 
   return (
     <div className="bookingPaymentPopUpWrapper">
@@ -269,16 +271,33 @@ function PaymentComponent() {
                         <h4>JRUN international Limited</h4>
                       </div>
                       <div className="fileUpload">
-                        <label htmlFor="file">
-                          <img src={importIcon} alt="import icon" /> <hr />
-                          Screenshot Of Payment
-                        </label>
-                        <input
-                          type="file"
-                          id="file"
-                          name="file"
-                          className="fileInput"
-                        />
+                        <div className="fileUplaodWrapper">
+                          {paymentReceipt != null ? (
+                            <div className="screenshotReceipt">
+                              <div className="receiptWrapper">
+                                <img
+                                  src={paymentReceipt}
+                                  alt="jrun payment receipt"
+                                />
+                              </div>
+                            </div>
+                          ) : (
+                            <>
+                              <label htmlFor="file">
+                                <img src={importIcon} alt="import icon" />{" "}
+                                <hr />
+                                Screenshot Of Payment
+                              </label>
+                              <input
+                                type="file"
+                                id="file"
+                                name="file"
+                                onChange={imageUpload}
+                                className="fileInput"
+                              />
+                            </>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>

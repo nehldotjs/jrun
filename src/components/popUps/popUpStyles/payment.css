@@ -447,6 +447,16 @@ fieldset {
     width: 50%;
 }
 
+.fileUplaodWrapper {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin: auto;
+    display: flex;
+}
+
 .paymentUpload .fileUpload input[type="file"] {
     display: none;
 }
@@ -480,7 +490,23 @@ fieldset {
 }
 
 
+.receiptWrapper {
+    height: 60px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+}
 
+.receiptWrapper img {
+    display: flex;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+
+}
 
 
 
@@ -585,14 +611,16 @@ fieldset {
         width: 100%;
     }
 
-    .paymentUpload{
+    .paymentUpload {
         padding: 20px 0px;
     }
-    .paymentHeader{
+
+    .paymentHeader {
         font-weight: bold;
         width: inherit;
     }
-    .bankTransferDetails{
+
+    .bankTransferDetails {
         margin: auto;
-     }
+    }
 }
