@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 import { FaAngleDoubleRight } from "react-icons/fa";
 
 import "./popUpStyles/serviceBooking.css";
-import { CompanyServiceList } from "../../companyData";
+import { CompanyServiceList } from "../../context/companyData";
 
 import PaymentComponent from "./PaymentComponent";
 
 function ServiceBooking(props) {
   const [viewService, setViewService] = useState(false);
   const [payment, setPayment] = useState(false);
-  console.log(payment)
   const { CompanyListDataArray, singleBooking, setSingleBooking } =
     useContext(CompanyServiceList);
+
   function paymentMethod() {
     setPayment(true);
   }
@@ -24,7 +24,7 @@ function ServiceBooking(props) {
     return result;
   }
   function clearAbutton() {
-    console.log("clear button clicked");
+    console.log("Input Cleared");
   }
 
   function bookNowPage() {
@@ -35,7 +35,6 @@ function ServiceBooking(props) {
     if (viewService) {
       setViewService(false);
     }
-    console.log("clicked on 1");
   }
 
   function bookButton(item) {
@@ -243,8 +242,6 @@ function ServiceBooking(props) {
   return (
     <div className="popUp-serviceWrapper">
       {serviceSectionWrapper()}
-      {/* SECOND SECTION */}
-      {/* CLEANING SERVICE EACH */}
       <div
         className={
           !viewService ? "deActiveBooking" : "selectedCleaningService"

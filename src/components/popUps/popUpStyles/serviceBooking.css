@@ -257,7 +257,6 @@ form .search {
     justify-content: center;
     align-items: center;
     overflow-y: scroll;
-    padding: 0px 10px;
 }
 
 .serviceBooking-companyList {
@@ -267,9 +266,12 @@ form .search {
     width: 100%;
     justify-content: center;
     align-items: flex-start;
-    top: 0px;
+    /* top: 0px; */
     margin: auto;
     gap: 5px;
+}
+.serviceBooking-companyList .listWrapper:last-child{
+    margin-bottom: 50px;
 }
 
 .serviceBooking-companyList .listWrapper {
@@ -283,7 +285,6 @@ form .search {
     padding: 5px;
     overflow: hidden;
     background-color: rgb(243, 242, 242);
-    /* background-color: transparent; */
 }
 
 .list-imageContainer {

@@ -1,33 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import importIcon from "../../assest/import.png";
-
+// CONTEXT
+import { PaymentContext } from "../../context/paymentData";
+import { CompanyServiceList } from "../../context/companyData";
 // Styles
 import "./popUpStyles/payment.css";
+
 function PaymentComponent() {
-  // const [inputChecker, setInputChecker] = useState({});
+  // CONTEXT
+  const { singleBooking } = useContext(CompanyServiceList);
+  const { formValues, setFormValues } = useContext(PaymentContext);
+  // STATES
   const [page, setPage] = useState(1);
-  const [formValues, setFormValues] = useState({
-    address: "",
-    phone: "",
-    email: "",
-    name: "",
-    type: "",
-    date: "",
-    time: "",
-  });
   const [paymentReceipt, setPaymentReceipt] = useState(null);
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormValues({
       ...formValues,
       [name]: value,
     });
-    let textProperty = { [name]: value };
-    console.log(textProperty);
-    // setInputChecker(textProperty);
   };
-  // function confirmBtn() {}
   function backBtn() {
     setPage(() => {
       if (page === 1) {
@@ -39,6 +33,25 @@ function PaymentComponent() {
   function nextBtn() {
     setPage(page + 1);
   }
+  function dataCollection() {
+    new Promise((resolve) => {
+      console.log("ACTION DETECTED");
+      // localStorage.setItem("name", formValues.name);
+      // localStorage.setItem("email", formValues.email);
+      // localStorage.setItem("address", formValues.address);
+      // localStorage.setItem("sender", formValues.sender);
+      // localStorage.setItem("phone", formValues.phone);
+      // localStorage.setItem("type", formValues.type);
+      // localStorage.setItem("date", formValues.date);
+      // localStorage.setItem("date", formValues.date);
+      // localStorage.setItem("time", formValues.time);
+      // localStorage.setItem("service", singleBooking?.companyName);
+      resolve();
+    }).then(() => {
+      nextBtn();
+    });
+  }
+
 
   function progressBtn() {
     return (
@@ -46,15 +59,10 @@ function PaymentComponent() {
         <div className="progressButton">
           {page === 4 ? (
             <div className="paymentNavigationBtn">
-              <button type="button" className="prevBtn" onClick={backBtn}>
-                <FaAngleLeft />
-                Cancel
-              </button>
               <button
-                type="button"
-                className="nextBtn "
-                // onClick={confirmBtn}
-              >
+                type="submit"
+                className="nextBtn submitBtn"
+                onSubmit={console.log("hello")}>
                 SUBMIT
                 <FaAngleRight />
               </button>
@@ -73,7 +81,10 @@ function PaymentComponent() {
                 <FaAngleLeft />
                 BACK
               </button>
-              <button type="button" className="nextBtn" onClick={nextBtn}>
+              <button
+                type="button"
+                className="nextBtn"
+                onClick={dataCollection}>
                 NEXT
                 <FaAngleRight />
               </button>
@@ -128,9 +139,7 @@ function PaymentComponent() {
               <h4>Payment</h4>
             </div>
           </div>
-
-          {/* ---------------------------------------------------------------------- */}
-
+          {/* #################################################################### */}
           <div className="bookingPaymentFormContainer">
             <div className="inputWrapper">
               <form method="post">
@@ -151,7 +160,6 @@ function PaymentComponent() {
                         onChange={handleChange}
                       />
                     </fieldset>
-
                     <fieldset className="fieldset">
                       <legend>Email</legend>
                       <input
@@ -161,17 +169,15 @@ function PaymentComponent() {
                         onChange={handleChange}
                       />
                     </fieldset>
-
                     <fieldset className="fieldset">
                       <legend>Phone</legend>
                       <input
-                        type="tel"
+                        type="number"
                         name="phone"
                         value={formValues.phone}
                         onChange={handleChange}
                       />
                     </fieldset>
-
                     <fieldset className="fieldset">
                       <legend>Address</legend>
                       <input
@@ -181,7 +187,6 @@ function PaymentComponent() {
                         onChange={handleChange}
                       />
                     </fieldset>
-
                     <fieldset>
                       <legend>Building type</legend>
                       <input
@@ -222,33 +227,47 @@ function PaymentComponent() {
                     }>
                     <div className="reviewWrapper">
                       <div className="activeCompany">
-                        <h3>JRUN Ceaning Service</h3>
+                        <h3>
+                          {singleBooking?.companyName
+                            ? singleBooking?.companyName
+                            : "Subsscription Payment"}
+                        </h3>
                       </div>
                       <div className="activeCustomerInfo">
                         <fieldset className="customerDetails">
                           <legend>Details</legend>
                           <div className="customer">
                             <p className="s-header">Name</p>
-                            <h3 className="c-clientInput">nelly pixu</h3>
+                            <h3 className="c-clientInput">
+                              {localStorage.getItem("name")}
+                            </h3>
                           </div>
                           <div className="customer">
                             <p className="s-header">Address</p>
-                            <h3 className="c-clientInput">606 washington Dc</h3>
+                            <h3 className="c-clientInput">
+                              {localStorage.getItem("address")}
+                            </h3>
                           </div>
                           <div className="customer">
                             <p className="s-header">Phone</p>
-                            <h3 className="c-clientInput">0123456789</h3>
+                            <h3 className="c-clientInput">
+                              {localStorage.getItem("phone")}
+                            </h3>
                           </div>
                         </fieldset>
                         <fieldset>
                           <legend>Date And Time</legend>
                           <div className="customer">
                             <p className="s-header">Date</p>
-                            <h3 className="c-clientInput">16th october 2022</h3>
+                            <h3 className="c-clientInput">
+                              {localStorage.getItem("date")}
+                            </h3>
                           </div>
                           <div className="customer">
                             <p className="s-header">Time</p>
-                            <h3 className="c-clientInput">9:00 AM</h3>
+                            <h3 className="c-clientInput">
+                              {localStorage.getItem("time")}
+                            </h3>
                           </div>
                         </fieldset>
                       </div>
@@ -270,6 +289,18 @@ function PaymentComponent() {
                         <h2>00045890000</h2>
                         <h4>JRUN international Limited</h4>
                       </div>
+                      <div className="paymentSenderName">
+                        <fieldset className="fieldset-senderName">
+                          {/* <legend>Name Of Sender</legend> */}
+                          <input
+                            type="text"
+                            name="sender"
+                            value={formValues.sender}
+                            onChange={handleChange}
+                            placeholder="Name Of Sender"
+                          />
+                        </fieldset>
+                      </div>
                       <div className="fileUpload">
                         <div className="fileUplaodWrapper">
                           {paymentReceipt != null ? (
@@ -284,7 +315,7 @@ function PaymentComponent() {
                           ) : (
                             <>
                               <label htmlFor="file">
-                                <img src={importIcon} alt="import icon" />{" "}
+                                <img src={importIcon} alt="import icon" />
                                 <hr />
                                 Screenshot Of Payment
                               </label>

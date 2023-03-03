@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Components from "./components";
 
 import ReactLoading from "react-loading";
-import CompanyData from "./companyData";
+import CompanyData from "./context/companyData";
+import PaymentData from "./context/paymentData";
 
 // POP UP COMPONENTS IMPORT
 import ServiceBooking from "./components/popUps/ServiceBooking";
@@ -29,19 +30,21 @@ function App() {
         </div>
       ) : (
         <div div className="app">
-          <CompanyData>
-            <Router>
-              <Routes>
-                <Route
-                  path="/jrun"
-                  exact
-                  element={<Components loading={loading} />}
-                />
-                <Route path="/booknow" element={<ServiceBooking />} />
-                <Route path="/subscription" element={<Subscription />} />
-              </Routes>
-            </Router>
-          </CompanyData>
+          <PaymentData>
+            <CompanyData>
+              <Router>
+                <Routes>
+                  <Route
+                    path="/jrun"
+                    exact
+                    element={<Components loading={loading} />}
+                  />
+                  <Route path="/booknow" element={<ServiceBooking />} />
+                  <Route path="/subscription" element={<Subscription />} />
+                </Routes>
+              </Router>
+            </CompanyData>
+          </PaymentData>
         </div>
       )}
     </>
