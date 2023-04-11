@@ -16,12 +16,15 @@ import "./app.css";
 
 function App() {
   const [loading, setLoading] = useState(false);
+  
   useEffect(() => {
     setLoading(true);
+
     setTimeout(() => {
       setLoading(false);
     }, 1000);
   }, []);
+
   return (
     <>
       {loading ? (
@@ -50,5 +53,4 @@ function App() {
     </>
   );
 }
-
 export default App;
